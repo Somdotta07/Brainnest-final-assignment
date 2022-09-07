@@ -5,5 +5,61 @@
 }
 
 body{
-  background-color: aquamarine;
+  background-color: rgb(213, 247, 236);
+}
+
+header {
+  width: 100vw;
+  margin-bottom: 20px;
+  background-color: rgb(55, 54, 54);
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: 10vh auto 0 auto;
+  box-shadow: 0px 0px 43px 17px rgba(153,153,153,1);
+}
+
+.display{
+  text-align: right;
+  height: 70px;
+  line-height: 70px;
+  padding: 16px 8px;
+  font-size: 25px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid rgb(30, 29, 29);
+  border-left: 1px solid rgb(37, 36, 36);
+}
+
+.buttons > div {
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+}
+
+.button{
+  border: 0.5px solid #999;
+  line-height: 100px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: rgb(24, 24, 24);
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+#equal {
+  background-color: rgb(26, 122, 191);
+  color: #fff;
+
 }
