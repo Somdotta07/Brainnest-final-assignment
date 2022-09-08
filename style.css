@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: rgb(213, 247, 236);
 }
 
@@ -22,15 +22,31 @@ h1 {
 .container {
   max-width: 400px;
   margin: 10vh auto 0 auto;
-  box-shadow: 0px 0px 43px 17px rgba(153,153,153,1);
+  box-shadow: 0px 0px 43px 17px rgba(153, 153, 153, 1);
 }
 
-.display{
+.display {
+  height: 100px;
+  width: 100%;
   text-align: right;
-  height: 70px;
-  line-height: 70px;
-  padding: 16px 8px;
-  font-size: 25px;
+  padding: 20px;
+  font-size: 30px;
+  position: relative;
+}
+
+.prev-value {
+  opacity: 0.4;
+  font-size: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.temp-value {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 20px;
+  opacity: 0.3;
 }
 
 .buttons {
@@ -45,14 +61,14 @@ h1 {
   border-right: 1px solid #999;
 }
 
-.button{
+.button {
   border: 0.5px solid #999;
   line-height: 100px;
   text-align: center;
   font-size: 25px;
   cursor: pointer;
 }
-.button:hover{
+.button:hover {
   background-color: rgb(24, 24, 24);
   color: #fff;
   transition: 0.5s ease-in-out;
@@ -61,5 +77,6 @@ h1 {
 #equal {
   background-color: rgb(26, 122, 191);
   color: #fff;
-
+  font-size: 35px;
+  grid-column: span 2;
 }
