@@ -14,12 +14,14 @@ const divide = document.getElementById("divide");
 let prevNum = "";
 let currNum = "";
 let result = null;
+//Add a . button
 let haveDec = false;
 let lastOperation = "";
 
 //Add numbers
 function addition(n1, n2) {
-  return n1 + n2;
+  let sum = (n1+n2)
+  return sum;
 }
 
 // console.log(addition(1,2))
@@ -97,7 +99,9 @@ function tempResult(name = "") {
 }
 
 equal.addEventListener("click", () => {
-  if (!currNum || !prevNum) return;
+  if (!currNum || !prevNum) {
+    return currentValue.innerText = "Error";
+  };
   haveDec = false;
   mathOperation();
   tempResult();
@@ -116,7 +120,55 @@ clearAll.addEventListener("click", () => {
   tempValue.innerText = "";
 });
 
+//Add a “backspace” button, so the user can undo if they click the wrong number.
+
 clearLastNum.addEventListener("click", () => {
   currNum = currNum.slice(0,-1)
   currentValue.innerText = currNum;
 })
+
+// Window eventListener for : Adding keyboard support
+window.addEventListener("keyup", (e) => {
+  if (e.key === "0" ||
+    e.key === "1" ||
+    e.key === "2" ||
+    e.key === "3" ||
+    e.key === "4" ||
+    e.key === "5" ||
+    e.key === "6" ||
+    e.key === "7" ||
+    e.key === "8" ||
+    e.key === "9" ||
+    e.key === ".") {
+    clickNumbers(e.key);
+  }
+   else if (    e.key === "/" ||
+    e.key === "*" ||
+    e.key === "-" ||
+    e.key === "+" ||
+    e.key === "%" ) {
+    clickOperators(e.key);
+  } else if ( e.key === "=" ||  e.key === "Enter" || e.keyCode === 13) {
+    clickEqual();
+  }
+})
+
+function clickNumbers(key) {
+  nums.forEach((num) => {
+    if (num.innerText === key) {
+      num.click();
+    }
+  })
+}
+
+function clickOperators(key) {
+  operators.forEach((operator) => {
+    if (operator.innerText === key) {
+      operator.click();
+    }
+  })
+}
+
+function clickEqual() {
+  equal.click();
+}
