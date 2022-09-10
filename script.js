@@ -14,36 +14,10 @@ const divide = document.getElementById("divide");
 let prevNum = "";
 let currNum = "";
 let result = null;
-//Add a . button
+//Added a . button
 let haveDec = false;
 let lastOperation = "";
 
-//Add numbers
-function addition(n1, n2) {
-  let sum = (n1+n2)
-  return sum;
-}
-
-// console.log(addition(1,2))
-// Subtract numbers
-function subtraction(n1, n2) {
-  if (n1 > n2) {
-    return n1 - n2;
-  } else {
-    let sub = n1 - n2;
-    return -sub;
-  }
-}
-
-// Multiply numbers
-function multiplication(n1, n2) {
-  return n1 * n2;
-}
-
-// Division numbers
-function division(n1, n2) {
-  return n1 / n2;
-}
 
 // Operator function
 
